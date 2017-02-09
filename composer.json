@@ -1,0 +1,14 @@
+{
+    "name": "nikhilkuria/niketostrava",
+    "description": "library to teleport my runs from nike to strava",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nikhil Kuriakose",
+            "email": "nikhilkuria@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.22"
+    }
+}
