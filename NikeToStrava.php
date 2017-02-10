@@ -2,5 +2,18 @@
 
 require('RequestMediator.php');
 
+$handle = fopen("php://stdin","r");
+
 $authMediator = RequestMediator::forPost('https://developer.nike.com/services/login');
-//$authMediator = new RequestMediator("hello","hello");
+
+print("Please login to Nike + \n");
+print("User Name : ");
+$userName = trim(fgets($handle));
+print("\nPassword : ");
+$passWord = trim(fgets($handle));
+
+$params = array();
+$params['username'] = $userName;
+$params['password'] = $passWord;
+
+$authMediator->call($params);
