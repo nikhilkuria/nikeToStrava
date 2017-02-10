@@ -9,7 +9,7 @@ $authMediator = RequestMediator::forPost('https://developer.nike.com/services/lo
 print("Please login to Nike + \n");
 print("User Name : ");
 $userName = trim(fgets($handle));
-print("\nPassword : ");
+print("Password : ");
 $passWord = trim(fgets($handle));
 
 $params = array();
