@@ -1,19 +1,18 @@
 <?php
 
-require('RequestMediator.php');
+require('BasicNikeService.php');
 
 $handle = fopen("php://stdin","r");
 
-$authMediator = RequestMediator::forPost('https://developer.nike.com/services/login');
+$nikeService = BasicNikeService::create();
 
 print("Please login to Nike + \n");
 print("User Name : ");
-$userName = trim(fgets($handle));
+//$userName = trim(fgets($handle));
+$userName = 'nikhilkuria@gmail.com';
 print("Password : ");
-$passWord = trim(fgets($handle));
+//$passWord = trim(fgets($handle));
+$passWord = 'lower@UPPER007';
 
-$params = array();
-$params['username'] = $userName;
-$params['password'] = $passWord;
-
-$authMediator->call($params);
+$token = $nikeService->login($userName,$passWord);
+print($token);
