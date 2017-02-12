@@ -13,4 +13,7 @@ interface NikeService
 
     public function getSummary() : array ;
 
+    public function getAllActivities() : array ;
+
+    public function getActivities($count) : array ;
 }

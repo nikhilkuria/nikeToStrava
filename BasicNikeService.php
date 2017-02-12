@@ -9,6 +9,7 @@
 
 define("LOGIN","https://developer.nike.com/services/login");
 define("SUMMARY","https://api.nike.com/v1/me/sport");
+define("ACTIVITIES", "https://api.nike.com/v1/me/sport/activities");
 
 require('NikeService.php');
 require('BasicService.php');
@@ -38,10 +39,25 @@ class BasicNikeService extends BasicService implements NikeService
         return $responseDecoded;
     }
 
+    public function getAllActivities(): array
+    {
+        return $this->getActivities(-1);
+    }
+
+    public function getActivities($count): array
+    {
+        $url = $this->addTokenParam(ACTIVITIES);
+        if($count!=-1){
+            $url = $this->addParam($url, 'count', '10', false);
+        }
+        $mediator = $this->getGetMediator($url);
+        $response = $mediator->call(array());
+        $responseDecoded = json_decode($response, true);
+        return $responseDecoded;
+    }
+
     private function addTokenParam($url){
-        return $url
-            .'?access_token='
-            .$this->accessToken;
+        return $this->addParam($url, 'access_token', $this->accessToken, true);
     }
 
     public static function createWithCredentials($userName, $passWord){
