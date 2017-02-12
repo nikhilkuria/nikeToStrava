@@ -19,4 +19,10 @@ abstract class BasicService
     protected function getGetMediator($url){
         return RequestMediator::forGet($url);
     }
+
+    protected function addParam($url, $paramName, $paramValue){
+        return $url
+            .'?'.$paramName.'='
+            .$paramValue;
+    }
 }
