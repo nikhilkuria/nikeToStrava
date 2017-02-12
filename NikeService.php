@@ -9,6 +9,8 @@
 interface NikeService
 {
 
-    public function login($userName, $passWord) : string;
+    public function login($userName, $passWord) : string ;
+
+    public function getSummary() : array ;
 
 }
