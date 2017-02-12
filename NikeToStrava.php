@@ -8,11 +8,10 @@ $nikeService = BasicNikeService::create();
 
 print("Please login to Nike + \n");
 print("User Name : ");
-//$userName = trim(fgets($handle));
-$userName = 'nikhilkuria@gmail.com';
+$userName = trim(fgets($handle));
 print("Password : ");
-//$passWord = trim(fgets($handle));
-$passWord = 'lower@UPPER007';
+$passWord = trim(fgets($handle));
 
-$token = $nikeService->login($userName,$passWord);
-print($token);
+$nikeService = BasicNikeService::createWithCredentials($userName,$passWord);
+$summary = $nikeService->getSummary();
+print("");
