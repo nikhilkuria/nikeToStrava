@@ -14,4 +14,13 @@ $passWord = trim(fgets($handle));
 
 $nikeService = BasicNikeService::createWithCredentials($userName,$passWord);
 $summary = $nikeService->getSummary();
+print("Connected to Nike+\n");
+print("-------------------\n");
+$records = $summary["summaries"][1]["records"];
+$totalDistance = round($records[2]["recordValue"],1);
+$totalTime = explode(":",$records[3]["recordValue"]);
+print("You have run a total distance of {$totalDistance} kms in {$totalTime[0]} hours, {$totalTime[1]} minutes, and {$totalTime[2]} seconds\n\n");
+
+print("Fetching the last 10 activities...");
+$lastRecords = $nikeService->getActivities(10);
 print("");
