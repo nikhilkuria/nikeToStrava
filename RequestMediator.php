@@ -17,7 +17,7 @@ class RequestMediator{
     public function __construct($url, $httpMethod){
         $this->logger = new Logger('name');
         $this->logger->pushHandler(new StreamHandler('php://stdout', Logger::INFO));
-        //$this->logger->info("Constructing Mediator for {$httpMethod} requests on {$url}");
+        $this->logger->info("Constructing Mediator for {$httpMethod} requests on {$url}");
         $this->url = $url;
         $this->httpMethod = $httpMethod;
     }
