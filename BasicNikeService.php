@@ -9,7 +9,7 @@
 
 define("LOGIN","https://developer.nike.com/services/login");
 define("SUMMARY","https://api.nike.com/v1/me/sport");
-define("ACTIVITIES", "https://api.nike.com/v1/me/sport/activities");
+define("ACTIVITIES", "https://api.nike.com/v1/me/sport/activities/running");
 
 require('NikeService.php');
 require('BasicService.php');
@@ -39,12 +39,7 @@ class BasicNikeService extends BasicService implements NikeService
         return $responseDecoded;
     }
 
-    public function getAllActivities(): array
-    {
-        return $this->getActivities(-1);
-    }
-
-    public function getActivities($count): array
+    public function getRuns($count, $summarizeActivity=false): array
     {
         $url = $this->addTokenParam(ACTIVITIES);
         if($count!=-1){
@@ -53,7 +48,31 @@ class BasicNikeService extends BasicService implements NikeService
         $mediator = $this->getGetMediator($url);
         $response = $mediator->call(array());
         $responseDecoded = json_decode($response, true);
-        return $responseDecoded;
+        $activities = $summarizeActivity ? $this->summarizeActivities($responseDecoded) : $responseDecoded;
+        return $activities;
+    }
+
+    private function summarizeActivities($responseDecoded){
+        $activities = array();
+        foreach ($responseDecoded["data"] as $fullActivity){
+            $metricSummary = $fullActivity["metricSummary"];
+
+            $activityId = $fullActivity["activityId"];
+            $distance = round($metricSummary["distance"],2);
+            $duration = $metricSummary["duration"];
+            $time = explode("T",$fullActivity["startTime"]);
+            $startDate = $time[0];
+            $startTime = $time[1];
+
+            $activity["activityId"] = $activityId;
+            $activity["distance"] = $distance;
+            $activity["duration"] = $duration;
+            $activity["startTime"] = $startTime;
+            $activity["startDate"] = $startDate;
+
+            $activities[] = $activity;
+        }
+        return $activities;
     }
 
     private function addTokenParam($url){
