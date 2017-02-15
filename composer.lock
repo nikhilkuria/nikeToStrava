@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2399f6087e9d17ef908dfcd86fff8f4c",
-    "content-hash": "a87665437aa21fa6135040c895a51535",
+    "content-hash": "06fe870e424f3e10d5347f748cb69f35",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -83,7 +82,35 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2016-11-26T00:15:39+00:00"
+        },
+        {
+            "name": "nikhilkuria/nikeandphp",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikhilkuria/nikeandphp.git",
+                "reference": "8fa6fc372e7ecff9dfb31cc41867289cc1c333f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikhilkuria/nikeandphp/zipball/8fa6fc372e7ecff9dfb31cc41867289cc1c333f6",
+                "reference": "8fa6fc372e7ecff9dfb31cc41867289cc1c333f6",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "^1.22"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "nikhilkuria",
+                    "email": "nikhilkuria@gmail.com"
+                }
+            ],
+            "description": "A PHP library used to work with Nike+ API",
+            "time": "2017-02-15T00:07:44+00:00"
         },
         {
             "name": "psr/log",
@@ -130,7 +157,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         }
     ],
     "packages-dev": [],

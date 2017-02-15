@@ -9,9 +9,7 @@
         }
     ],
     "require": {
-        "monolog/monolog": "^1.22"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "5.5.7"
+        "monolog/monolog": "^1.22",
+        "nikhilkuria/nikeandphp" : "^0.0.1"
     }
 }
