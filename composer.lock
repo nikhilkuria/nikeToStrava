@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "06fe870e424f3e10d5347f748cb69f35",
+    "content-hash": "8e7ac7351ea8b25f30ef89e37283cd78",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -86,22 +86,27 @@
         },
         {
             "name": "nikhilkuria/nikeandphp",
-            "version": "v0.0.1",
+            "version": "v0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikhilkuria/nikeandphp.git",
-                "reference": "8fa6fc372e7ecff9dfb31cc41867289cc1c333f6"
+                "reference": "288dac58698f5a6c86f6ff3698d726b7606455d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikhilkuria/nikeandphp/zipball/8fa6fc372e7ecff9dfb31cc41867289cc1c333f6",
-                "reference": "8fa6fc372e7ecff9dfb31cc41867289cc1c333f6",
+                "url": "https://api.github.com/repos/nikhilkuria/nikeandphp/zipball/288dac58698f5a6c86f6ff3698d726b7606455d2",
+                "reference": "288dac58698f5a6c86f6ff3698d726b7606455d2",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "^1.22"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NikeAndPhp\\": "src/NikeAndPhp"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
@@ -110,7 +115,7 @@
                 }
             ],
             "description": "A PHP library used to work with Nike+ API",
-            "time": "2017-02-15T00:07:44+00:00"
+            "time": "2017-02-21T11:50:58+00:00"
         },
         {
             "name": "psr/log",

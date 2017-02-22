@@ -1,6 +1,8 @@
 <?php
 
-require('BasicNikeService.php');
+require "vendor/autoload.php";
+
+use NikeAndPhp\Service\BasicNikeService;
 
 $handle = fopen("php://stdin","r");
 

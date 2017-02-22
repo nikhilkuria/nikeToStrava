@@ -10,6 +10,6 @@
     ],
     "require": {
         "monolog/monolog": "^1.22",
-        "nikhilkuria/nikeandphp" : "^0.0.1"
+        "nikhilkuria/nikeandphp" : "^0.0.2"
     }
 }
